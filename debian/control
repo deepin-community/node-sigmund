@@ -1,0 +1,28 @@
+Source: node-sigmund
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jérémy Lal <kapouer@melix.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13)
+ , node-tap <!nocheck>
+ , dh-sequence-nodejs
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-sigmund
+Vcs-Git: https://salsa.debian.org/js-team/node-sigmund.git
+Homepage: https://github.com/isaacs/sigmund
+Rules-Requires-Root: no
+
+Package: node-sigmund
+Architecture: all
+Depends:
+ ${misc:Depends}
+Multi-Arch: foreign
+Description: Quick and dirty signatures for Objects module for Node.js
+ This is like a much faster `deepEquals` comparison, which returns a
+ string key suitable for caches and the like.
+ The returned key will be as unique and reproducible as calling
+ `JSON.stringify` or `util.inspect` on the object, but is much faster.
+ .
+ Node.js is an event-based server-side javascript engine.
